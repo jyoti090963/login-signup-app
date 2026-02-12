@@ -9,9 +9,20 @@ const ProductRouter = require('./Routes/ProductRouter');
 
 const PORT = process.env.PORT || 8080;
 
-// 🔑 middleware (ONLY ONCE)
+// 🔑 CORS setup for local + deployed frontend
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://login-signup-app-omega.vercel.app"
+];
+
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
