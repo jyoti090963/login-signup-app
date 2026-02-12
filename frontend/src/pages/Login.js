@@ -74,7 +74,7 @@ function Login() {
                         name='password'
                         placeholder='Enter your password...'
                         value={loginInfo.password}
-                        style={{ paddingRight: '60px' }} // space for toggle
+                        style={{ paddingRight: '60px' }}
                     />
                     <button
                         type="button"
@@ -88,7 +88,6 @@ function Login() {
                             background: 'transparent',
                             color: '#020202',
                             padding: 0,
-                            fontWeight: 'bold'
                         }}
                     >
                         {showPassword ? "Hide" : "Show"}
