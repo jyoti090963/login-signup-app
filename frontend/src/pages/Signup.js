@@ -94,6 +94,7 @@ function Signup() {
                             cursor: 'pointer',
                             border: 'none',
                             background: 'transparent',
+                            color: '#007BFF',
                             padding: 0,
                             fontWeight: 'bold'
                         }}
