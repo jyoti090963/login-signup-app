@@ -86,7 +86,7 @@ function Login() {
                             cursor: 'pointer',
                             border: 'none',
                             background: 'transparent',
-                            color: '#007BFF',
+                            color: '#020202',
                             padding: 0,
                             fontWeight: 'bold'
                         }}
