@@ -1,4 +1,4 @@
-
+/* ===== RESET ===== */
 *,
 ::before,
 ::after{
@@ -7,53 +7,69 @@
   margin: 0;
 }
 
-label{
-  font-size: 20px;
-}
-
-html,
-body{
+/* ===== PAGE LOCK ===== */
+html, body{
   height: 100%;
-  width: 100%;
+  overflow: hidden; /* scroll band */
 }
 
+/* ===== BACKGROUND FIX ===== */
 body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(#EEAECA,#94BBE9);
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#EEAECA,#94BBE9);
 }
 
+/* ===== FORM CONTAINER ===== */
 .container{
   background-color: #FFF;
-  padding: 32px 48px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  padding: 32px 40px;
+  border-radius: 12px;
+
+  width: min(400px, 92%);
+  max-height: 90vh;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  overflow-y: auto; /* mobile keyboard safe */
 }
 
+/* ===== TITLE ===== */
 .container > h1{
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* ===== FORM ===== */
 .container > form{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
+
 .container div{
   display: flex;
   flex-direction: column;
 }
 
+/* ===== INPUT ===== */
 .container input{
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   border: none;
   outline: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #ccc;
+  transition: 0.25s;
+}
+
+.container input:focus{
+  border-bottom: 2px solid #94BBE9;
 }
 
 .container input::placeholder{
@@ -61,19 +77,35 @@ body{
   font-style: italic;
 }
 
+/* ===== LABEL ===== */
+label{
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+/* ===== BUTTON ===== */
 button {
   background-color: #EEAECA;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 6px;
+  padding: 12px;
   cursor: pointer;
-  margin: 10px 0;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+
+  transition: background-color 0.3s ease, transform 0.15s ease;
 }
 
 button:hover {
   background-color: #94BBE9;
-  transform: scale(1.05);
+  transform: scale(1.04);
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 480px){
+  .container{
+    padding: 24px 18px;
+    border-radius: 10px;
+  }
 }
