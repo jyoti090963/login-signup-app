@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+
 *,
 ::before,
 ::after{
@@ -7,13 +7,16 @@
   margin: 0;
 }
 
-/* ===== PAGE LOCK ===== */
-html, body{
-  height: 100%;
-  overflow: hidden; /* scroll band */
+
+html, body {
+  height: 100dvh;      
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
-/* ===== BACKGROUND FIX ===== */
+
+
 body{
   position: fixed;
   inset: 0;
@@ -25,7 +28,7 @@ body{
   background: linear-gradient(135deg,#EEAECA,#94BBE9);
 }
 
-/* ===== FORM CONTAINER ===== */
+
 .container{
   background-color: #FFF;
   padding: 32px 40px;
@@ -36,16 +39,16 @@ body{
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 
-  overflow-y: auto; /* mobile keyboard safe */
+  overflow-y: auto;
 }
 
-/* ===== TITLE ===== */
+
 .container > h1{
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* ===== FORM ===== */
+
 .container > form{
   display: flex;
   flex-direction: column;
@@ -57,7 +60,7 @@ body{
   flex-direction: column;
 }
 
-/* ===== INPUT ===== */
+
 .container input{
   width: 100%;
   font-size: 18px;
@@ -77,13 +80,13 @@ body{
   font-style: italic;
 }
 
-/* ===== LABEL ===== */
+
 label{
   font-size: 16px;
   margin-bottom: 3px;
 }
 
-/* ===== BUTTON ===== */
+
 button {
   background-color: #EEAECA;
   border: none;
